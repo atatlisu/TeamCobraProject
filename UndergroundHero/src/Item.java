@@ -1,27 +1,48 @@
+import java.util.List;
+
 public class Item {
 
-	private String name;
+	private String name, description, type;
 
-	private int itemID;
-
-	private String description;
-
-	private String type;
-
-	public int getID() {
-		return 0;
+	public Item(){
+		
+	}
+	
+	public Item(String name, String description, String type) {
+		this.name = name;
+		this.description = description;
+		this.type = type;
 	}
 
 	public String getName() {
-		return null;
+		return name;
 	}
 
 	public String getDescription() {
-		return null;
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getType() {
-		return null;
+		return type;
+	}
+
+	@Override
+	public String toString() {
+		return "Item [name=" + name + ", description=" + description + ", type=" + type + "]";
+	}
+
+	public void openInventory(List<Item> list){
+		for(Item i : list){
+			System.out.println(i.toString());
+		}
+	}
+	
+	public void useItem(){
+		//TODO: will remove item when on use with the exception for equips and key items
 	}
 
 }
